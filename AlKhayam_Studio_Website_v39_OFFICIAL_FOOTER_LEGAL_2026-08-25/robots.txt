@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://alkhayamstudio.sa/sitemap.xml
