@@ -1,6 +1,0 @@
-(()=>{
- const root=document.querySelector('[data-branch-page]'); if(!root)return;
- const ar=document.documentElement.lang==='ar'; const type=root.dataset.hoursType;
- const HOURS={A:{0:[[480,1380]],1:[[480,1380]],2:[[480,1380]],3:[[480,1380]],4:[[480,1380]],5:[[960,1380]],6:[[480,1380]]},B:{0:[[480,780],[960,1380]],1:[[480,780],[960,1380]],2:[[480,780],[960,1380]],3:[[480,780],[960,1380]],4:[[480,780],[960,1380]],5:[[960,1380]],6:[[480,780],[960,1380]]},C:{0:[[480,750],[960,1350]],1:[[480,750],[960,1350]],2:[[480,750],[960,1350]],3:[[480,750],[960,1350]],4:[[480,750],[960,1350]],5:[[960,1350]],6:[[480,750],[960,1350]]}};
- const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Riyadh',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),o={};parts.forEach(p=>o[p.type]=p.value);const days={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};const min=Number(o.hour)*60+Number(o.minute),open=(HOURS[type]?.[days[o.weekday]]||[]).some(([s,e])=>min>=s&&min<e);const el=document.querySelector('[data-branch-status]');if(el){el.parentElement.classList.add(open?'is-open':'is-closed');el.textContent=open?(ar?'مفتوح الآن':'Open now'):(ar?'مغلق الآن':'Closed now')}
-})();
